@@ -1,13 +1,10 @@
 import React from "react";
 import { SafeAreaView, Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native"; 
-import Navegar from './src/Routes/Navegar'
+import Login from "./src/pages/login/Login";
 export default function App(){
   return(
     <SafeAreaView style={{flex: 1}}>
-      <NavigationContainer>
-          <Navegar />
-      </NavigationContainer>
+      <Login />
     </SafeAreaView>
   )
 }
