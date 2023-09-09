@@ -1,18 +1,23 @@
 import React from "react";
-import { TouchableHighlight, View, StyleSheet } from 'react-native'
-import { AntDesign } from '@expo/vector-icons';
+import { StyleSheet, Text } from 'react-native'
+import { Box, Button, Icon } from 'native-base'
+import { MaterialIcons } from "@expo/vector-icons";
 
 interface Props {
     onClick: Function
+    loading: boolean
 }
 
 export default function ButtonLogin(props: Props) {
     return(
-        <View style={styles.container}>
-            <TouchableHighlight onPress={() => props.onClick()} style={styles.button}>
-                <AntDesign style={styles.icon}  name="rightcircleo" size={34} color="#BDBDBD" />
-            </TouchableHighlight>
-        </View>
+        <Box style={styles.container}>
+            <Button 
+            isLoading={props.loading} 
+            onPress={() => props.onClick()}  
+            style={styles.button}>
+                <Text style-={styles.textButton}>Entrar</Text>
+            </Button>
+        </Box>
     )
 }
 
@@ -23,14 +28,15 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     button: {
-        backgroundColor: '#707070',
-        borderRadius: 50,
-        width: '50%',
-        height: '100%'
+        backgroundColor: '#dddd62',
+        borderRadius: 5,
+        width: '80%',
+        height: '100%',
     },
-    icon: {
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        height: '100%'
+    textButton: {
+        height: '100%',
+        fontSize: 50,
+        fontWeight: 'bold',
+
     }
 })
