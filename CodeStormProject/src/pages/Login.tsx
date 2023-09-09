@@ -5,6 +5,8 @@ import { CommonActions } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native'
 import { Input, NativeBaseProvider, Box, Icon, FormControl } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import axios from "axios";
+
 export default function Login() {
     const [user, setUser] = useState("")
     const [passWord, setPassWord] = useState("")
@@ -12,6 +14,7 @@ export default function Login() {
 
     
     function Submit() {
+        /*
         if(passWord.length < 8) {
             console.warn("Digite 8 Caracteres");
             return;
@@ -21,8 +24,13 @@ export default function Login() {
                 index: 0,
                 routes: [{name: 'Home'}]
             })
-        )
-    }
+        )*/
+        axios.post('https://localhost:4516/api/post', (data: object) => {
+
+        }).then((data) => JSON.stringify(data))
+          .catch((err) => console.warn(err))
+    } 
+    
 
     function handleUser(e: string) {
         setUser(e)
