@@ -8,6 +8,7 @@ export default function App(){
   // Login ==  true(renderiza Home)
   let login = false
 
+  
   if(!login) {
     return(
       <SafeAreaView style={{flex: 1}}>
